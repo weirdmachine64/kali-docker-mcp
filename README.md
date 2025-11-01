@@ -4,7 +4,8 @@ A Model Context Protocol (MCP) server that provides secure command execution cap
 
 ## Demo
 
-https://github.com/user-attachments/assets/demo.mp4
+[https://github.com/user-attachments/assets/demo.mp4
+](https://github.com/user-attachments/assets/0e23d8ed-745f-43eb-b636-e1aa9e8d207e)
 
 *Watch the Kali MCP Server in action*
 
