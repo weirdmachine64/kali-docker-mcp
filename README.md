@@ -1,6 +1,6 @@
 # Kali MCP Server
 
-A Model Context Protocol (MCP) server that provides secure command execution capabilities in a containerized Kali Linux environment for penetration testing and security research.
+A Model Context Protocol (MCP) server that provides command execution capabilities in a containerized Kali Linux environment for semi-automated penetration testing and security research capabilities.
 
 ## Demo
 
