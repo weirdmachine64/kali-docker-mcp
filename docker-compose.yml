@@ -1,0 +1,38 @@
+services:
+  kali-mcp:
+    container_name: kali-mcp-server
+    build: .
+    image: kali-mcp-server:latest
+    stdin_open: true
+    tty: true
+    # Run with elevated privileges for security tools
+    privileged: true
+    # Network configuration
+    network_mode: host
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DEBIAN_FRONTEND=noninteractive
+    # DNS configuration
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    # Resource limits for safety
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+          cpus: '4.0'
+    # Restart policy
+    restart: unless-stopped
+    # Security options
+    security_opt:
+      - seccomp:unconfined
+    # Capabilities for network tools
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_ADMIN
+    # Volumes
+    volumes:
+      - ./workspace:/app/workspace:rw

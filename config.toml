@@ -1,0 +1,102 @@
+# Kali MCP Server Configuration
+
+[PROJECT]
+name = "Kali MCP"
+version = "1.0.0"
+
+# Workspace Settings
+[WORKSPACE]
+directory = "/app/workspace/{date_target}"
+structure = [
+    "recon",
+    "scans",
+    "exploits",
+    "evidence",
+    "reports",
+    "logs",
+    "screenshots"
+]
+
+# Out-of-Band Interaction Detection
+[INTERACTSH]
+enabled = true
+server = "" # Keep empty to use default interactsh servers
+token = ""
+number = 1
+
+# Service API Tokens for Reconnaissance & Intelligence Gathering
+# Each service includes: token, endpoint, and documentation URL
+
+[SERVICES.github]
+enabled = false
+name = "GitHub"
+description = "Repository and code intelligence mining"
+token = ""
+endpoint = "https://api.github.com"
+docs = "https://docs.github.com/en/rest"
+# Create token at: https://github.com/settings/tokens
+# Required scopes: public_repo, read:org
+
+[SERVICES.shodan]
+enabled = false
+name = "Shodan"
+description = "Infrastructure and exposed service discovery"
+token = ""
+endpoint = "https://api.shodan.io"
+docs = "https://developer.shodan.io/api"
+# Get API key at: https://account.shodan.io/
+
+[SERVICES.censys]
+enabled = false
+name = "Censys"
+description = "Certificate and subdomain discovery"
+api_id = ""
+api_secret = ""
+endpoint = "https://search.censys.io/api"
+docs = "https://search.censys.io/api"
+# Get credentials at: https://censys.io/account/api
+
+[SERVICES.virustotal]
+enabled = false
+name = "VirusTotal"
+description = "Passive DNS and malware intelligence"
+token = ""
+endpoint = "https://www.virustotal.com/api/v3"
+docs = "https://developers.virustotal.com/reference/overview"
+# Get API key at: https://www.virustotal.com/gui/my-apikey
+
+[SERVICES.securitytrails]
+enabled = false
+name = "SecurityTrails"
+description = "Historical DNS and subdomain data"
+token = ""
+endpoint = "https://api.securitytrails.com/v1"
+docs = "https://docs.securitytrails.com/reference"
+# Get API key at: https://securitytrails.com/app/account/credentials
+
+[SERVICES.hunter]
+enabled = false
+name = "Hunter.io"
+description = "Email enumeration and breach data"
+token = ""
+endpoint = "https://api.hunter.io/v2"
+docs = "https://hunter.io/api-documentation"
+# Get API key at: https://hunter.io/api_keys
+
+[SERVICES.dehashed]
+enabled = false
+name = "DeHashed"
+description = "Credential breach searches"
+email = ""
+token = ""
+endpoint = "https://api.dehashed.com"
+docs = "https://www.dehashed.com/docs"
+# Get credentials at: https://dehashed.com/profile
+
+[SERVICES.wayback]
+enabled = false
+name = "Wayback Machine"
+description = "Historical URL and content mining"
+endpoint = "https://web.archive.org"
+docs = "https://archive.org/help/wayback_api.php"
+# No API key required for basic usage
